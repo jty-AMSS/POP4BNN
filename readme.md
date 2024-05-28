@@ -29,12 +29,12 @@ Our trained BNNs are available at '.\data' and in JSON format.
 
 
 To verify  Robustness against $\| \cdot \|_{\infty}-$ attacks by our method, run  'Exp_SDP.m' in Matlab.
-To verify  Robustness against $\| \cdot \|_{\infty}-$ attacks by Gurobi, run  'Exp_Grb_iter.m' in Matlab.
+To verify  Robustness against $\| \cdot \|_{\infty}-$ attacks by Gurobi, run  'Exp_Grb.m' in Matlab.
 
 To verify  Robustness against $\| \cdot \|_{2}-$ attacks by our method, run  'Exp_SDP_L2_with_Bound.m' in Matlab.
 To verify  Robustness against $\| \cdot \|_{2}-$ attacks by Gurobi, run  'Exp_Grb_L2_with_bound.m' in Matlab.
 
-Please modify the parameters 'NetDataPath' and 'eps_tol' in the corresponding .m file to compute the results for different BNNs and different values of $\varepsilon$.
+Please modify the parameters 'NetDataPath' and 'eps_tol' in the corresponding '.m' file to compute the results for different BNNs and different values of $\varepsilon$.
 
 
 For the source code of the standard verification problem, please refer to 'BNNV2POP_Large.m'.
@@ -68,9 +68,9 @@ For $\text{BNN}_1:$ with size $[784, 500, 500, 10], w_s=34.34\%$:
 For $\text{BNN}_2:$ with size $[784, 500, 500, 10], w_s=19.07\%$:
 | $\delta_{\|\|\cdot\|\|_{\infty}}$ | $ \tau_{\text{LP}}$  verified   |  $ \tau_{\text{LP}}$  time (s)    | $\tau_{\text{tighter}, cs}^{1}$  verified   | $\tau_{\text{tighter}, cs}^{1}$  time (s)  |  $\tau_{\text{Soft-MILP}}$ verified        |  $\tau_{\text{Soft-MILP}}$ time  (s)    |
 |  ----  | ----  | ----  | ----  |----  | ----  | ----  |
-|$0.25$|      83 |     0.01 | 91 |  3.62 | 3 NR+95 RO| 0.04|
-|$0.50$|      31 |    0.02 | 60 |  6.69 |  4 NR+94 RO| 1.21|
-|$1.00$|      1 |    0.03 | 21 |  10.76 |  15 NR+50 RO|  251.90|
+|$0.25$|     14 |     0.03 | 59 | 11.97  | 3 NR+95 RO|2.23|
+|$0.50$|      0 |    0.05 | 23 |  42.37|  9 NR+63 RO| 220.53|
+|$0.75$|      0 |    0.08 | 9 |  139.18|  10 NR+19 RO|  455.61|
 ### [Robustness against $\| \cdot \|_{2}-$ attacks]
 
 For $\text{BNN}_1:$ with size $[784, 500, 500, 10], w_s=34.34\%$:
@@ -78,9 +78,9 @@ For $\text{BNN}_1:$ with size $[784, 500, 500, 10], w_s=34.34\%$:
 
 | $\delta_{\|\|\cdot\|\|_{2}}$ | $\tau_{\text{tighter}, cs}^{1}$   verified  | $\tau_{\text{tighter}, cs}^{1}$  time (s)  |  $\tau_{\text{Soft-MINP}}$ verified        |  $\tau_{\text{Soft-MINP}}$ time  (s)    |
 |  ----  | ----  | ----  | ----  |----  |  
-|$10$|      70 |5.23 |  3 | 93  |  33.35 |
-|$20$|     36  |  12.05  |4 | 30 |   447.11 |
-|$30$|     13 |   34.24 |  4 | 6 |   556.07|
+|$10$|      70 |5.23 |  3 NR+93 RO |  33.35 |
+|$20$|     36  |  19.54  |4 NR+30 RO |   447.11 |
+|$30$|     13 |   34.24 |  4 NR+ 6  RO |   556.07|
 
 For $\text{BNN}_2:$ with size $[784, 500, 500, 10], w_s=19.07\%$:
 | $\delta_{\|\|\cdot\|\|_{2}}$ | $\tau_{\text{tighter}, cs}^{1}$   verified  | $\tau_{\text{tighter}, cs}^{1}$  time (s)  |  $\tau_{\text{Soft-MINP}}$ verified        |  $\tau_{\text{Soft-MINP}}$ time  (s)    |
