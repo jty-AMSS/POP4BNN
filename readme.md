@@ -20,9 +20,6 @@ pip install tensorflow
 pip install larq
 ```
 
-## Pre-trained Models
-
-Our trained BNNs are available at '.\data' and in JSON format.
 
 ## Evaluation
 
